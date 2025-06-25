@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            gray: {
+              50: '#f9fafb',
+              100: '#f3f4f6',
+              200: '#e5e7eb',
+              300: '#d1d5db',
+              400: '#9ca3af',
+              500: '#6b7280',
+              600: '#4b5563',
+              700: '#374151',
+              800: '#1f2937',
+              900: '#111827',
+            },
+            red: {
+              500: '#ef4444'
+            },
+            black: '#000000',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="font-inter">
+  <div class="flex h-screen">
+    <!-- Left - Form -->
+    <div class="w-1/2 bg-gray-50 p-12 flex flex-col justify-center">
+      <h2 class="text-5xl font-extrabold mb-2 text-black">Daftar</h2>
+      <p class="text-gray-600 mb-10 text-base">Sudah Punya Akun? <a href="masuk.html" class="text-blue-600 font-medium">Masuk</a></p>
+
+      <form class="space-y-6">
+        <!-- Nama -->
+        <div class="relative">
+          <input type="text" placeholder="nama" class="w-full border border-gray-400 rounded-full py-3 px-5 pl-12 focus:outline-none text-base" />
+          <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5.121 17.804A6.5 6.5 0 0112 15.5a6.5 6.5 0 016.879 2.304M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </span>
+        </div>
+
+        <!-- Username / Email -->
+        <div class="relative">
+          <input type="text" placeholder="username atau email" class="w-full border border-gray-400 rounded-full py-3 px-5 pl-12 focus:outline-none text-base" />
+          <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M16 12a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0a4 4 0 01-8 0m12 4v1a2 2 0 01-2 2H6a2 2 0 01-2-2v-1m16 0H4" />
+            </svg>
+          </span>
+        </div>
+
+        <!-- Password -->
+        <div class="relative">
+          <input type="password" placeholder="Password" class="w-full border border-gray-400 rounded-full py-3 px-5 pl-12 pr-12 focus:outline-none text-base" />
+          <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 4.5C7.305 4.5 3.135 7.63 1.5 12c1.635 4.37 5.805 7.5 10.5 7.5s8.865-3.13 10.5-7.5C20.865 7.63 16.695 4.5 12 4.5zM12 15a3 3 0 110-6 3 3 0 010 6z" />
+            </svg>
+          </span>
+          <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </span>
+        </div>
+
+        <!-- Simpan Password -->
+        <div class="flex items-center space-x-2">
+          <input type="checkbox" id="remember" class="accent-black w-4 h-4" />
+          <label for="remember" class="text-sm text-gray-700">Simpan password</label>
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="w-full bg-black text-white font-semibold py-3 rounded-full hover:bg-gray-800 transition text-base">Daftar</button>
+      </form>
+    </div>
+
+    <!-- Right - Welcome Section -->
+    <div class="w-1/2 bg-black text-white p-12 flex flex-col justify-center items-center text-center">
+      <img src="assets/Icons/jembood.png" alt="Anjani Logo" class="w-28 h-28 mb-6" />
+      <h2 class="text-xl text-red-500 font-semibold">Selamat Datang,</h2>
+      <h1 class="text-4xl font-extrabold mb-4">Petualang!</h1>
+      <p class="text-gray-400 max-w-md text-base">Masuk ke akunmu dan temukan perlengkapan terbaik untuk menjelajah alam.</p>
+    </div>
+  </div>
+</body>
+
+</html>

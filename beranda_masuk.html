@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda Masuk</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #FF3B30;
+      /* Tailwind's red-500 */
+      --secondary-color: #FACC15;
+      /* Example: a yellow color if you want to add an accent */
+      --text-color: #FFFFFF;
+      /* Tailwind's white */
+      --bg-black: #181818;
+      /* Tailwind's black */
+      --light-dark-background: #18181B;
+      /* Tailwind's zinc-900 */
+      --gray-text-color: #A1A1AA;
+      /* Tailwind's zinc-400 */
+      --header-font-size: 3rem;
+      /* Equivalent to text-5xl (48px for base 16px) */
+      --subheader-font-size: 1.5rem;
+      /* Equivalent to text-2xl (24px) */
+      --body-font-size: 1rem;
+      /* Equivalent to text-base (16px) */
+      --small-font-size: 0.875rem;
+      /* Equivalent to text-sm (14px) */
+      --extra-small-font-size: 0.75rem;
+      /* Equivalent to text-xs (12px) */
+      --main-font: "Inter", sans-serif;
+      --heading-font: "Inter", sans-serif;
+      /* You can change this to a different font if desired */
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      /* background-color: var(--bg-black); */
+    }
+  </style>
+</head>
+
+<body class=" bg-black text-white ">
+  <!-- Navbar -->
+  <header
+    class="flex justify-between items-center px-6 py-4 border-zinc-800 top-0 z-10 fixed w-full bg-black backdrop-blur bg-opacity-70 shadow">
+    <!-- Logo & Menu -->
+    <div class="flex items-center space-x-10">
+      <img src="assets/Icons/Logo.png" alt="Logo" class="h-10 w-10" />
+      <nav class="hidden md:flex space-x-7 text-sm font-normal">
+        <a href="#" class="text-red-500 font-semibold">Beranda</a>
+        <a href="alat_camping.html" class="hover:text-red-500">Alat Camping</a>
+        <a href="paket_sewa.html" class="hover:text-red-500">Paket Sewa</a>
+        <a href="promo.html" class="hover:text-red-500">Promo</a>
+        <a href="tentang_kami.html" class="hover:text-red-500">Tentang Kami</a>
+      </nav>
+    </div>
+
+    <!-- Search & Icons -->
+    <div class="flex items-center space-x-1 ">
+      <!-- Search Bar -->
+      <div class="flex items-center bg-zinc-900 px-4 py-2 rounded-full space-x-2 text-sm">
+        <img src="assets/Icons/search.png">
+        <input type="text" placeholder="Cari Barang"
+          class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-32" />
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class=" rounded-full bg-zinc-900">
+        <button onclick="window.location.href='keranjang.html'" 
+        class="p-2 pr-1 px-3  rounded-full bg-zinc-900">
+          <img src="assets/Icons/shopping_cart.png" alt="Cart" class="h-5 w-5" />
+        </button>
+        <button onclick="window.location.href='halaman_favorit.html'"
+        class="p-2 pr-3 rounded-full bg-zinc-900">
+          <img src="assets/Icons/favorite_border-2.png" alt="Wishlist" class="h-5 w-5" />
+        </button>
+      </div>
+      <button onclick="window.location.href='kelola_akun.html'"
+        class="p-2 rounded-full bg-zinc-900 flex items-center space-x-2">
+        <img src="assets/Icons/account_circle.png" alt="User" class="h-5 w-5" />
+        <span class="text-sm">Jason</span>
+      </button>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="grid md:grid-cols-2 items-center px-6 py-16 gap-10 pt-20">
+    <!-- Left Text -->
+    <div>
+      <p class="text-sm font-semibold">
+        <span class="text-red-500">Second Gear</span> - Layak Pakai
+      </p>
+      <h1 class="text-4xl font-extrabold leading-tight mt-4">
+        Nggak Perlu Baru untuk <br />Berpetualang Jauh
+      </h1>
+      <p class="text-zinc-400 mt-6 text-base">
+        Sewa atau Beli Gear Gunung Second Berkualitas dari Toko Outdoor Jogja,
+        Praktis dan Ramah Kantong!
+      </p>
+      <button onclick="window.location.href='/alat_camping.html'"
+        class="mt-8 px-6 py-3 bg-white text-black rounded-full text-sm font-semibold flex justify-start items-center space-x-2 hover:bg-zinc-200 transition">
+        <span>&gt;</span>
+        <span>Beli & Sewa Sekarang</span>
+      </button>
+    </div>
+
+    <div class="relative flex justify-center">
+      <img src="assets/image.png" alt="Sepatu Hiking" class="w-[380px] md:w-[460px]" />
+    </div>
+  </section>
+
+  <section class="bg-black text-white px-6 py-12">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Cuaca & Lokasi -->
+      <div class="flex flex-wrap justify-center items-center gap-6 mb-10">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <!-- Hari Ini -->
+          <div class="rounded-lg text-white w-fit space-y-2">
+            <!-- Dropdown Lokasi -->
+            <div class="relative">
+              <select class="appearance-none bg-zinc-800 text-white text-sm px-4 py-2 pr-8 rounded-md shadow-md w-full">
+                <option>Merbabu</option>
+                <option>Merapi</option>
+                <option>Sumbing</option>
+              </select>
+              <!-- Ikon panah dropdown -->
+              <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-white">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Temperatur dan Status Cuaca -->
+            <div class="flex items-start space-x-2">
+              <div class="text-6xl font-extrabold leading-none">28°</div>
+              <div class="flex flex-col leading-tight text-sm mt-1">
+                <span>Hari Ini</span>
+                <span>Berawan</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Hari-hari berikutnya -->
+          <div class="bg-zinc-900 rounded-lg px-4 py-2 text-center w-[140px]">
+            <div class="text-sm font-semibold">Selasa</div>
+            <div class="text-xl font-bold">29°</div>
+            <div class="text-sm text-zinc-400">Cerah</div>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-2 text-center w-[140px]">
+            <div class="text-sm font-semibold">Rabu</div>
+            <div class="text-xl font-bold">28°</div>
+            <div class="text-sm text-zinc-400">Berawan</div>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-2 text-center w-[140px]">
+            <div class="text-sm font-semibold">Kamis</div>
+            <div class="text-xl font-bold">30°</div>
+            <div class="text-sm text-zinc-400">Cerah</div>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-2 text-center w-[140px]">
+            <div class="text-sm font-semibold">Jumat</div>
+            <div class="text-xl font-bold">27°</div>
+            <div class="text-sm text-zinc-400">Berawan</div>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-2 text-center w-[140px]">
+            <div class="text-sm font-semibold">Sabtu</div>
+            <div class="text-xl font-bold">28°</div>
+            <div class="text-sm text-zinc-400">Cerah</div>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-2 text-center w-[140px]">
+            <div class="text-sm font-semibold">Minggu</div>
+            <div class="text-xl font-bold">29°</div>
+            <div class="text-sm text-zinc-400">Cerah</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kategori Produk -->
+      <div>
+        <div class="flex items-center gap-3 overflow-x-auto">
+          <h2 class="text-2xl font-bold text-white mr-4 whitespace-nowrap">Kategori Produk</h2>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Tas Carrier</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Jaket</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Sepatu</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Trackpole</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Tenda</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Topi</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Water Bledder</span>
+          <span class="bg-zinc-900 px-6 py-3 rounded-full text-sm whitespace-nowrap">Lainnya</span>
+          <button class="bg-white text-black rounded-full p-2 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Kartu Promo -->
+  <section class="bg-black py-10">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6">
+      <!-- Promo 1 -->
+      <div class="relative rounded-2xl overflow-hidden">
+        <img src="assets/Frame 101.png" alt="Promo Cashback" class="w-full h-60 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-6">
+          <h3 class="text-white text-xl font-medium">Sewa Rutin, <span class="text-red-500 font-bold">Dapat
+              Cashback</span></h3>
+          <p class="text-white text-4xl font-extrabold mt-2">Rp50.000!</p>
+          <button onclick="window.location.href='/promo_akun.html'"
+            class="mt-5 bg-white text-black rounded-full px-5 py-2 font-semibold flex items-center gap-2 w-max"> <img
+              src="assets/Icons/attach_money.png">
+            Dapatkan Promo
+          </button>
+        </div>
+      </div>
+      <!-- Promo 2 -->
+      <div class="relative rounded-2xl overflow-hidden">
+        <img src="assets/Frame 102.png" alt="Promo Bonus" class="w-full h-60 object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-6">
+          <h3 class="text-white text-xl font-medium">Belanja Rp300.000, <span
+              class="text-red-500 font-bold">Bonus</span>
+          </h3>
+          <p class="text-white text-4xl font-extrabold mt-2">Rp30.000!</p>
+          <button onclick="window.location.href='/promo_akun.html'"
+            class="mt-5 bg-white text-black rounded-full px-5 py-2 font-semibold flex items-center gap-2 w-max"> <img
+              src="assets/Icons/attach_money.png">
+            Dapatkan Promo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Temukan Paket Sewa -->
+  <section class="bg-black py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-white text-3xl font-bold mb-2">Temukan Paket Sewa</h2>
+      <p class="text-gray-400 mb-10">Tanpa bingung barang apa yang perlu dibawa!</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Paket Tektok -->
+        <div class="bg-zinc-900 rounded-2xl p-6 text-white flex flex-col justify-between">
+          <div>
+            <h3 class="text-red-600 text-xl font-semibold mb-1">Paket Tektok</h3>
+            <p class="text-sm text-gray-300 mb-4">Puncak tanpa menginap</p>
+            <p class="text-3xl font-bold mb-4">Rp 40.000<span class="text-base font-normal">/hari</span></p>
+            <ul class="text-left text-sm space-y-2 mb-6">
+              <li>• Daypack 20–30L</li>
+              <li>• Jas Hujan</li>
+              <li>• Headlamp + baterai</li>
+              <li>• Trekking Pole</li>
+              <li>• Botol air lipat / Water bladder</li>
+              <li>• Emergency blanket + peluit</li>
+            </ul>
+          </div>
+          <button onclick="window.localation.href=''" class="bg-white text-black rounded-full py-2 font-semibold">Sewa
+            Sekarang</button>
+        </div>
+
+        <!-- Paket Pemula -->
+        <div class="bg-zinc-900 rounded-2xl p-6 text-white flex flex-col justify-between">
+          <div>
+            <h3 class="text-red-600 text-xl font-semibold mb-1">Paket Pemula</h3>
+            <p class="text-sm text-gray-300 mb-4">Pertama kali naik + bermalam</p>
+            <p class="text-3xl font-bold mb-4">Rp100.000<span class="text-base font-normal">/hari</span></p>
+            <ul class="text-left text-sm space-y-2 mb-6">
+              <li>• Carrier 50L</li>
+              <li>• Tenda 1–2 orang</li>
+              <li>• Sleeping bag</li>
+              <li>• Matras gulung</li>
+              <li>• Kompor Portable + gas kecil</li>
+              <li>• Headlamp + baterai</li>
+              <li>• Trekking pole</li>
+              <li>• Jas hujan</li>
+              <li>• Emergency Blanket</li>
+            </ul>
+          </div>
+          <button class="bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
+        </div>
+
+        <!-- Paket Standar -->
+        <div class="bg-zinc-900 rounded-2xl p-6 text-white flex flex-col justify-between">
+          <div>
+            <h3 class="text-red-600 text-xl font-semibold mb-1">Paket Standar</h3>
+            <p class="text-sm text-gray-300 mb-4">Berpengalaman + alat masak</p>
+            <p class="text-3xl font-bold mb-4">Rp 120.000<span class="text-base font-normal">/hari</span></p>
+            <ul class="text-left text-sm space-y-2 mb-6">
+              <li>• Tas Carrier 60L</li>
+              <li>• Tenda 2 orang</li>
+              <li>• Sleeping Bag</li>
+              <li>• Matras Aluminium</li>
+              <li>• Kompor Portable + gas kecil</li>
+              <li>• Headlamp + baterai</li>
+              <li>• Trekking Pole</li>
+            </ul>
+          </div>
+          <button class="bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alat Sewa & Beli -->
+  <section class="bg-black py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Alat Sewa -->
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-white text-2xl font-bold">Alat Sewa</h2>
+            <p class="text-gray-400 text-sm">Pilih perlengkapan terbaik untuk setiap petualangan.</p>
+          </div>
+          <button onclick="window.location.href='/alat_camping.html'"
+            class="bg-white text-black rounded-full justify-end px-5 py-2 font-semibold">Lebih Banyak</button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Tenda -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/tenda.png" alt="Tenda" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Tenda Dome</p>
+            <p class="text-sm text-gray-400">Tenda kapasitas 4 orang, tahan hujan dan angin.</p>
+            <p class="text-sm text-white mt-1">Rp 35.000/hari</p>
+          </div>
+          <!-- Carrier -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/carrier 1.png" alt="Carrier" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Carrier 60L</p>
+            <p class="text-sm text-gray-400">Ransel gunung kapasitas besar untuk perjalanan panjang.</p>
+            <p class="text-sm text-white mt-1">Rp 25.000/hari</p>
+          </div>
+          <!-- Jaket Merah -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/jaket 1.png" alt="Jaket Merah" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Jaket Parasut Merah</p>
+            <p class="text-sm text-gray-400">Jaket windproof dan waterproof, cocok untuk suhu dingin.</p>
+            <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
+          </div>
+          <!-- Jaket Hitam -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/jaket 2.png" alt="Jaket Hitam" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Jaket Gunung Hitam</p>
+            <p class="text-sm text-gray-400">Jaket tahan air dan angin dengan lapisan hangat di dalam.</p>
+            <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alat Beli -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-white text-2xl font-bold">Alat Beli</h2>
+            <p class="text-gray-400 text-sm">Miliki perlengkapan terbaik untuk petualanganmu.</p>
+          </div>
+          <button onclick="window.location.href='/alat_camping.html'"
+            class="bg-white text-black rounded-full px-5 py-2 font-semibold">Lebih Banyak</button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Sepatu 1 -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/sepatu 2.png" alt="Sepatu Gunung 1" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Sepatu Gunung A</p>
+            <p class="text-sm text-gray-400">Sol anti selip, cocok untuk jalur licin dan berbatu.</p>
+            <p class="text-sm text-white mt-1">Rp 450.000</p>
+          </div>
+          <!-- Sepatu 2 -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/sepatu 3.png" alt="Sepatu Gunung 2" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Sepatu Gunung B</p>
+            <p class="text-sm text-gray-400">Ringan, breathable, dan nyaman untuk trekking panjang.</p>
+            <p class="text-sm text-white mt-1">Rp 420.000</p>
+          </div>
+          <!-- Sepatu 3 -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/sepatu 1.png" alt="Kompor Portable" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Sepatu Gunung C</p>
+            <p class="text-sm text-gray-400">Sol anti selip, cocok untuk jalur licin dan berbatu.</p>
+            <p class="text-sm text-white mt-1">Rp 850.000</p>
+          </div>
+          <!-- Sepatu 4 -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/sepatu 4.png" alt="Botol Air" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='/halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                src="/assets/Icons/favorite_border-1.png" alt=""></button>
+            <p class="text-white font-semibold">Sepatu Gunung D</p>
+            <p class="text-sm text-gray-400">Ringan, breathable, dan nyaman untuk trekking panjang.</p>
+            <p class="text-sm text-white mt-1">Rp 750.000</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tanggapan Pendaki -->
+  <section class="bg-black py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-white text-2xl font-bold mb-6">Tanggapan Pendaki</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Testimoni 1 -->
+        <div class="bg-zinc-900 p-6 rounded-xl text-white">
+          <p class="text-sm italic mb-2">“Lorem ipsum dolor sit amet consectetur.”</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+            <div>
+              <p class="font-semibold">Jack Ki Chan</p>
+              <p class="text-xs text-gray-400">Pendaki Sumatera</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-zinc-900 p-6 rounded-xl text-white">
+          <p class="text-sm italic mb-2">“Lorem ipsum dolor sit amet consectetur.”</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+            <div>
+              <p class="font-semibold">Luke Al Jihad</p>
+              <p class="text-xs text-gray-400">Pendaki Yogyakarta</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-zinc-900 p-6 rounded-xl text-white">
+          <p class="text-sm italic mb-2">“Lorem ipsum dolor sit amet consectetur.”</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+            <div>
+              <p class="font-semibold">Mifta Canci</p>
+              <p class="text-xs text-gray-400">Pendaki Sulawesi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-black text-white py-16 px-6 md:px-20">
+    <h2 class="text-3xl font-bold mb-8">Alur Transaksi</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- Alur Beli Barang -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6">Alur Beli Barang</h3>
+        <div class="relative space-y-10">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">1</div>
+              <div class="h-full w-1 bg-white mt-1"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Pemesanan</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">2</div>
+              <div class="h-full w-1 bg-white mt-1"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Judul Flow Kedua</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">3</div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Judul Flow Ketiga</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alur Sewa Barang -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6">Alur Sewa Barang</h3>
+        <div class="relative space-y-10">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">1</div>
+              <div class="h-full w-1 bg-white mt-1"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Pemilihan Alat Camping</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">2</div>
+              <div class="h-full w-1 bg-white mt-1"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Judul Flow Kedua</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">3</div>
+              <div class="h-full w-1 bg-white mt-1"></div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Judul Flow Ketiga</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex items-start gap-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-red-500 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center">4</div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Judul Flow Keempat</h4>
+              <p class="text-sm text-gray-300 mt-1">Lorem ipsum dolor sit amet consectetur. Vitae quam auctor aliquet
+                purus mauris fringilla scelerisque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-black text-white py-12 px-6 md:px-20 border-t border-gray-800">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      <!-- Kolom 1: Slogan -->
+      <div>
+        <p class="font-semibold leading-relaxed">
+          Temukan kebebasan di alam,<br>
+          kami bantu lengkapi<br>
+          perlengkapannya.
+        </p>
+      </div>
+
+      <!-- Kolom 2: Navigasi -->
+      <div>
+        <h4 class="font-semibold mb-3">Navigasi</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>Beranda</li>
+          <li>Alat Camping</li>
+          <li>Paket Sewa</li>
+          <li>Promo</li>
+          <li>Tentang Kami</li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Kontak -->
+      <div>
+        <h4 class="font-semibold mb-3">Kontak</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Email</li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4: Copyright -->
+      <div>
+        <h4 class="font-semibold mb-3">© All right reserved 2025</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>kembali ke atas</li>
+          <li>Keamanan Privasi</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

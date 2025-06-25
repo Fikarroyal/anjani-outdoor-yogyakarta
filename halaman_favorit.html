@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hal Favorit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #000000;
+      /* Ensure body background is black */
+      color: #ffffff;
+      /* Ensure default text color is white */
+    }
+
+    /* Navbar Specific Adjustments */
+    .navbar-icon-button {
+      padding: 0.625rem;
+      /* Equivalent to 10px */
+      border-radius: 9999px;
+      /* Fully rounded */
+      background-color: #1a1a1a;
+      /* bg-zinc-900 equivalent */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar-icon-button img {
+      width: 1.25rem;
+      /* Equivalent to 20px */
+      height: 1.25rem;
+      /* Equivalent to 20px */
+    }
+
+    .navbar-profile-button {
+      padding: 0.625rem;
+      /* Equivalent to 10px */
+      border-radius: 9999px;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      /* Space-x-2 equivalent */
+    }
+
+    .navbar-search-input {
+      background-color: transparent;
+      outline: none;
+      color: #ffffff;
+      padding: 0.5rem 0;
+      /* py-2 equivalent, no horizontal padding from tailwind */
+      width: 8rem;
+      /* approximate width for search input */
+    }
+
+    @media (min-width: 768px) {
+      .navbar-search-input {
+        width: auto;
+        /* auto width for md screens */
+      }
+    }
+
+    /* Main Content Layout */
+    .main-container {
+      max-width: 1200px;
+      /* Adjust based on typical content width */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      /* px-8 equivalent */
+      padding-right: 2rem;
+      /* px-8 equivalent */
+      padding-top: 2rem;
+      /* py-8 equivalent */
+    }
+
+    /* Tab Buttons */
+    .tab-buttons-container {
+      display: flex;
+      gap: 0.5rem;
+      /* space-x-2 equivalent */
+      margin-bottom: 2rem;
+      /* mb-8 equivalent */
+      padding-left: 0.25rem;
+      /* Small left padding for alignment */
+    }
+
+    .tab-button {
+      background-color: #262626;
+      /* bg-zinc-700 equivalent */
+      color: #ffffff;
+      padding: 0.5rem 1.25rem;
+      /* py-2 px-5 equivalent */
+      border-radius: 9999px;
+      /* full rounded */
+      font-weight: 600;
+      /* font-semibold equivalent */
+      font-size: 0.875rem;
+      /* text-sm equivalent */
+      cursor: pointer;
+      border: none;
+    }
+
+    .tab-button.active {
+      background-color: #ef4444;
+      /* bg-red-500 equivalent */
+    }
+
+    /* Product Cards */
+    .product-listing-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      /* space-y-6 equivalent */
+      padding: 0 0.25rem;
+      /* Small padding for alignment */
+    }
+
+    .product-card {
+      background-color: #1a1a1a;
+      /* bg-zinc-900 equivalent */
+      border-radius: 0.5rem;
+      /* rounded-lg equivalent */
+      padding: 0px 35px 0px 20px;
+      /* p-6 equivalent */
+      display: flex;
+      align-items: center;
+      /* Align items to the top */
+      gap: 1.5rem;
+      /* space-x-6 equivalent */
+    }
+
+    .product-card-image-wrapper {
+      flex-shrink: 0;
+      /* Prevent image from shrinking */
+      width: 300px;
+      /* Exact width from image */
+      height: 300px;
+      /* Exact height from image */
+      border-radius: 0.5rem;
+      /* rounded-md equivalent */
+      overflow: hidden;
+      /* Ensure image respects border-radius */
+      display: flex;
+      /* Center image */
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-card-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      /* Cover the area, crop if necessary */
+    }
+
+    .product-details {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      /* tight spacing for text elements */
+    }
+
+    .product-type {
+      color: #ef4444;
+      /* text-red-500 equivalent */
+      font-size: 0.75rem;
+      /* text-xs equivalent */
+      font-weight: 600;
+      /* font-semibold equivalent */
+      margin-bottom: 0.25rem;
+      /* mb-1 */
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      /* text-xl equivalent */
+      font-weight: 600;
+      /* font-semibold equivalent */
+      margin-bottom: 0.5rem;
+      /* mb-2 */
+    }
+
+    .product-meta {
+      font-size: 0.875rem;
+      /* text-sm equivalent */
+      color: #a0a0a0;
+      /* text-zinc-400 equivalent */
+      line-height: 1.2;
+      /* Tighten line height */
+    }
+
+    .product-meta em {
+      color: white;
+      /* Ensure 'selengkapnya' is white */
+      font-style: normal;
+      /* Remove italic for 'selengkapnya' */
+    }
+
+    .product-price-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      /* mt-4 equivalent */
+    }
+
+    .current-price {
+      font-size: 1.5rem;
+      /* text-2xl equivalent */
+      font-weight: 700;
+      /* font-bold equivalent */
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      background-color: #262626;
+      /* bg-zinc-700 equivalent */
+      border-radius: 9999px;
+      /* full rounded */
+      padding: 0.5rem 0.75rem;
+      /* py-2 px-3 equivalent */
+      gap: 0.75rem;
+      /* space-x-3 equivalent */
+      font-weight: 600;
+      /* font-semibold equivalent */
+    }
+
+    .quantity-control button {
+      color: white;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0 0.2rem;
+    }
+
+    .quantity-control span {
+      font-size: 1rem;
+    }
+
+    .product-actions {
+      display: flex;
+      justify-content: flex-end;
+      /* Align to the right */
+      gap: 0.75rem;
+      /* space-x-3 equivalent */
+      margin-top: 1rem;
+      /* mt-4 equivalent */
+    }
+
+    .action-button {
+      width: 2.25rem;
+      /* w-9 equivalent */
+      height: 2.25rem;
+      /* h-9 equivalent */
+      border-radius: 9999px;
+      /* full rounded */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+    }
+
+    .action-button.delete {
+      background-color: #ef4444;
+      /* bg-red-500 equivalent */
+      color: white;
+    }
+
+    .action-button.add-to-cart {
+      background-color: #ffffff;
+      /* bg-white equivalent */
+      color: #000000;
+      /* text-black equivalent */
+    }
+
+    .action-button svg {
+      width: 1.25rem;
+      /* w-5 equivalent */
+      height: 1.25rem;
+      /* h-5 equivalent */
+    }
+
+    /* "Mungkin Anda Suka" Section */
+    .suggestion-section {
+      margin-top: 4rem;
+      /* Increased space from previous section */
+      padding-left: 0.25rem;
+      /* small padding for alignment */
+      padding-right: 0.25rem;
+      /* small padding for alignment */
+    }
+
+    .suggestion-title {
+      font-size: 1.5rem;
+      /* text-2xl equivalent */
+      font-weight: 600;
+      /* font-semibold equivalent */
+      margin-bottom: 1.5rem;
+      /* mb-6 equivalent */
+    }
+
+    .suggestion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      /* Responsive grid */
+      gap: 1.25rem;
+      /* gap-5 equivalent */
+    }
+
+    .suggestion-card {
+      background-color: #1a1a1a;
+      /* bg-zinc-900 equivalent */
+      border-radius: 0.5rem;
+      /* rounded-lg equivalent */
+      padding: 1rem;
+      /* p-4 equivalent */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      /* For heart icon positioning */
+    }
+
+    .suggestion-card-image-wrapper {
+      width: 100%;
+      height: 150px;
+      /* Increased height for larger images */
+      border-radius: 0.25rem;
+      /* rounded-sm equivalent */
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+      /* mb-3 equivalent */
+    }
+
+    .suggestion-card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .suggestion-card-type {
+      color: #ef4444;
+      /* text-red-500 equivalent */
+      font-size: 0.6875rem;
+      /* text-xs slightly smaller */
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      /* mb-1 */
+    }
+
+    .suggestion-card-title {
+      font-size: 0.9375rem;
+      /* text-base slightly smaller */
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      /* mb-1 */
+      white-space: nowrap;
+      /* Prevent title from wrapping */
+      overflow: hidden;
+      /* Hide overflow */
+      text-overflow: ellipsis;
+      /* Add ellipsis if too long */
+      width: 100%;
+      /* Ensure it respects container width */
+    }
+
+    .suggestion-card-description {
+      font-size: 0.75rem;
+      /* text-xs equivalent */
+      color: #a0a0a0;
+      /* text-zinc-400 equivalent */
+      margin-bottom: 0.5rem;
+      /* mb-2 */
+      white-space: nowrap;
+      /* Prevent description from wrapping */
+      overflow: hidden;
+      /* Hide overflow */
+      text-overflow: ellipsis;
+      /* Add ellipsis if too long */
+      width: 100%;
+      /* Ensure it respects container width */
+    }
+
+    .suggestion-card-price {
+      font-size: 1rem;
+      /* text-lg equivalent */
+      font-weight: 700;
+      /* font-bold equivalent */
+      color: white;
+    }
+
+    .heart-icon {
+      position: absolute;
+      top: 0.75rem;
+      /* top-3 equivalent */
+      right: 0.75rem;
+      /* right-3 equivalent */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Semi-transparent black */
+      border-radius: 9999px;
+      /* full rounded */
+      padding: 0.4rem;
+      /* Custom padding for icon */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .heart-icon svg {
+      width: 0.9rem;
+      /* Smaller icon */
+      height: 0.9rem;
+      color: white;
+    }
+
+    /* Footer adjustments */
+    .footer-section {
+      margin-top: 5rem;
+      /* Increased space from suggestion section */
+      padding-top: 3rem;
+      /* py-12 equivalent */
+      padding-bottom: 3rem;
+      /* py-12 equivalent */
+      padding-left: 1.5rem;
+      /* px-6 equivalent */
+      padding-right: 1.5rem;
+      /* px-6 equivalent */
+      border-top: 1px solid #262626;
+      /* border-t border-zinc-800 equivalent */
+    }
+
+    @media (min-width: 768px) {
+      .footer-section {
+        padding-left: 5rem;
+        /* px-20 equivalent */
+        padding-right: 5rem;
+        /* px-20 equivalent */
+      }
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      /* gap-8 equivalent */
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer-slogan {
+      font-weight: 600;
+      /* font-semibold equivalent */
+      line-height: 1.5;
+      /* leading-relaxed equivalent */
+    }
+
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      /* mb-3 equivalent */
+    }
+
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.875rem;
+      /* text-sm equivalent */
+      color: #a0a0a0;
+      /* text-zinc-400 equivalent */
+    }
+
+    .footer-list li {
+      margin-bottom: 0.25rem;
+      /* Mimic space-y-1 */
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+  <header
+    class="flex justify-between items-center px-6 py-4 border-zinc-800 top-0 z-10 fixed w-full bg-black backdrop-blur bg-opacity-70 shadow">
+    <!-- Logo & Menu -->
+    <div class="flex items-center space-x-10">
+      <img src="assets/Icons/Logo.png" alt="Logo" class="h-10 w-10" />
+      <nav class="hidden md:flex space-x-7 text-sm font-normal">
+        <a href="beranda.html" class="hover:text-red-500">Beranda</a>
+        <a href="alat_camping.html" class="hover:text-red-500">Alat Camping</a>
+        <a href="paket_sewa.html" class="hover:text-red-500">Paket Sewa</a>
+        <a href="promo.html" class="hover:text-red-500">Promo</a>
+        <a href="tentang_kami.html" class="hover:text-red-500">Tentang Kami</a>
+      </nav>
+    </div>
+
+    <!-- Search & Icons -->
+    <div class="flex items-center space-x-1 ">
+      <!-- Search Bar -->
+      <div class="flex items-center bg-zinc-900 px-4 py-2 rounded-full space-x-2 text-sm">
+        <img src="assets/Icons/search.png">
+        <input type="text" placeholder="Cari Barang"
+          class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-32" />
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class=" rounded-full bg-zinc-900">
+        <button onclick="window.location.href='/keranjang.html'" class="p-2 pr-1 px-3  rounded-full bg-zinc-900">
+          <img src="assets/Icons/shopping_cart.png" alt="Cart" class="h-5 w-5" />
+        </button>
+        <button onclick="window.location.href='/halaman_favorit.html'" class="p-2 pr-3 rounded-full bg-zinc-900">
+          <img src="assets/Icons/favorite_border-2.png" alt="Wishlist" class="h-5 w-5" />
+        </button>
+      </div>
+      <button onclick="window.location.href='masuk.html'"
+        class="p-2 rounded-full bg-zinc-900 flex items-center space-x-2">
+        <img src="assets/Icons/account_circle.png" alt="User" class="h-5 w-5" />
+        <span class="text-sm">Profil</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="main-container pt-24">
+    <div class="tab-buttons-container">
+      <button class="tab-button active">Semua Alat</button>
+      <button class="tab-button">Alat Beli</button>
+      <button class="tab-button">Alat Sewa</button>
+    </div>
+
+    <div class="product-listing-section">
+      <div class="product-card">
+        <div class="product-card-image-wrapper">
+          <img src="assets/tenda.png" alt="Tenda" class="product-card-image" />
+        </div>
+        <div class="product-details">
+          <span class="product-type">Alat Sewa</span>
+          <h3 class="product-title product-price-section">Tenda
+            <strong class="current-price">Rp 20.000</strong>
+            <div class="quantity-control">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </h3>
+          <small class="product-meta">Ukuran: 1-2 org</small>
+          <small class="product-meta">Warna: Biru</small>
+          <small class="product-meta">Stok: 99</small>
+          <small class="product-meta">Deskripsi: Lorem ipsum dolor <em class="text-white">selengkapnya...</em></small>
+          <div class="product-price-section">
+            <strong class="current-price">Rp 20.000</strong>
+            <div class="product-actions">
+              <button class="action-button delete">
+                <img src="assets/Icons/delete.png" alt="">
+              </button>
+              <button class="action-button add-to-cart">
+                <img src="assets/Icons/sopping_black.png" alt="">
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-image-wrapper">
+          <img src="assets/sepatu 1.png" alt="Sepatu" class="product-card-image">
+        </div>
+        <div class="product-details">
+          <span class="product-type">Alat Sewa</span>
+          <h3 class="product-title product-price-section">Sepatu
+            <strong class="current-price">Rp 10.000</strong>
+            <div class="quantity-control">
+              <button>-</button>
+              <span>2</span>
+              <button>+</button>
+            </div>
+          </h3>
+          <small class="product-meta">Ukuran: 43</small>
+          <small class="product-meta">Warna: Coklat</small>
+          <small class="product-meta">Stok: 99</small>
+          <small class="product-meta">Deskripsi: Lorem ipsum dolor <em class="text-white">selengkapnya...</em></small>
+          <div class="product-price-section">
+            <strong class="current-price">Rp 20.000</strong>
+            <div class="product-actions">
+              <button class="action-button delete">
+                <img src="assets/Icons/delete.png" alt="">
+              </button>
+              <button class="action-button add-to-cart">
+                <img src="assets/Icons/sopping_black.png" alt="">
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- untuk halaman rekomendasi -->
+    <section class="bg-black py-16 px-4">
+      <div class="max-w-6xl mx-auto">
+          <div class="flex items-center justify-between mb-4">
+
+            <div>
+              <h2 class="text-white text-2xl font-bold">Mungkin Anda Suka</h2>
+            </div>
+            <button onclick="window.location.href='alat_camping.html'"
+              class="bg-white text-black rounded-full justify-end px-5 py-2 font-semibold">Lebih Banyak</button>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Tenda -->
+            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+              <img src="assets/tenda.png" alt="Tenda" class="w-full h-40 object-contain mx-auto mb-4">
+              <button onclick="window.location.href='halaman_favorit.html'"
+                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                  src="assets/Icons/favorite_border-1.png" alt=""></button>
+              <p class="text-white font-semibold">Tenda Dome</p>
+              <p class="text-sm text-gray-400">Tenda kapasitas 4 orang, tahan hujan dan angin.</p>
+              <p class="text-sm text-white mt-1">Rp 35.000/hari</p>
+            </div>
+            <!-- Carrier -->
+            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+              <img src="assets/carrier 1.png" alt="Carrier" class="w-full h-40 object-contain mx-auto mb-4">
+              <button onclick="window.location.href='halaman_favorit.html'"
+                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                  src="assets/Icons/favorite_border-1.png" alt=""></button>
+              <p class="text-white font-semibold">Carrier 60L</p>
+              <p class="text-sm text-gray-400">Ransel gunung kapasitas besar untuk perjalanan panjang.</p>
+              <p class="text-sm text-white mt-1">Rp 25.000/hari</p>
+            </div>
+            <!-- Jaket Merah -->
+            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+              <img src="assets/jaket 1.png" alt="Jaket Merah" class="w-full h-40 object-contain mx-auto mb-4">
+              <button onclick="window.location.href='halaman_favorit.html'"
+                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                  src="assets/Icons/favorite_border-1.png" alt=""></button>
+              <p class="text-white font-semibold">Jaket Parasut Merah</p>
+              <p class="text-sm text-gray-400">Jaket windproof dan waterproof, cocok untuk suhu dingin.</p>
+              <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
+            </div>
+            <!-- Jaket Hitam -->
+            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+              <img src="assets/jaket 2.png" alt="Jaket Hitam" class="w-full h-40 object-contain mx-auto mb-4">
+              <button onclick="window.location.href='halaman_favorit.html'"
+                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
+                  src="assets/Icons/favorite_border-1.png" alt=""></button>
+              <p class="text-white font-semibold">Jaket Gunung Hitam</p>
+              <p class="text-sm text-gray-400">Jaket tahan air dan angin dengan lapisan hangat di dalam.</p>
+              <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
+            </div>
+          </div>
+      </div>
+    </section>
+    <footer class="footer-section bg-black text-white">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-slogan">
+            Temukan kebebasan di alam,<br />
+            kami bantu lengkapi<br />
+            perlengkapannya.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigasi</h4>
+          <ul class="footer-list">
+            <li>Beranda</li>
+            <li>Alat Camping</li>
+            <li>Paket Sewa</li>
+            <li>Promo</li>
+            <li>Tentang Kami</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Kontak</h4>
+          <ul class="footer-list">
+            <li>Instagram</li>
+            <li>WhatsApp</li>
+            <li>Email</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">© All right reserved 2025</h4>
+          <ul class="footer-list">
+            <li>kembali ke atas</li>
+            <li>Keamanan Privasi</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>

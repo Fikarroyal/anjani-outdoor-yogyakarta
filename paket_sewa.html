@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paket Sewa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+  <!-- Navbar -->
+    <header
+    class="flex justify-between items-center px-6 py-4 border-zinc-800 top-0 z-10 fixed w-full bg-black backdrop-blur bg-opacity-70 shadow">
+    <!-- Logo & Menu -->
+    <div class="flex items-center space-x-10">
+      <img src="assets/Icons/Logo.png" alt="Logo" class="h-10 w-10" />
+      <nav class="hidden md:flex space-x-7 text-sm font-normal">
+        <a href="beranda.html" class="hover:text-red-500">Beranda</a>
+        <a href="alat_camping.html" class="hover:text-red-500">Alat Camping</a>
+        <a href="paket_sewa.html" class="text-red-500  font-semibold">Paket Sewa</a>
+        <a href="promo.html" class="hover:text-red-500">Promo</a>
+        <a href="tentang_kami.html" class="hover:text-red-500">Tentang Kami</a>
+      </nav>
+    </div>
+
+    <!-- Search & Icons -->
+    <div class="flex items-center space-x-1 ">
+      <!-- Search Bar -->
+      <div class="flex items-center bg-zinc-900 px-4 py-2 rounded-full space-x-2 text-sm">
+        <img src="assets/Icons/search.png">
+        <input type="text" placeholder="Cari Barang"
+          class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-32" />
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class=" rounded-full bg-zinc-900">
+        <button onclick="window.location.href='/keranjang.html'" class="p-2 pr-1 px-3  rounded-full bg-zinc-900">
+          <img src="assets/Icons/shopping_cart.png" alt="Cart" class="h-5 w-5" />
+        </button>
+        <button onclick="window.location.href='/halaman_favorit.html'" class="p-2 pr-3 rounded-full bg-zinc-900">
+          <img src="assets/Icons/favorite_border-2.png" alt="Wishlist" class="h-5 w-5" />
+        </button>
+      </div>
+      <button onclick="window.location.href='masuk.html'"
+        class="p-2 rounded-full bg-zinc-900 flex items-center space-x-2">
+        <img src="assets/Icons/account_circle.png" alt="User" class="h-5 w-5" />
+        <span class="text-sm">Profil</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-6 pb-16 pt-20">
+    <section class="text-center py-12 px-4">
+      <h1 class="text-3xl md:text-4xl font-extrabold">Semua Peralatan, Satu Paket Praktis!</h1>
+      <p class="text-gray-300 text-lg mt-2">Pilih Paketmu, Siap Mendaki!</p>
+    </section>
+
+    <!-- Paket Cards -->
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Paket Tektok -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 text-center border border-gray-700">
+        <h2 class="text-red-500 font-bold text-lg">Paket Tektok</h2>
+        <p class="text-sm text-gray-400 mb-3">Puncak tanpa menginap</p>
+        <div class="text-2xl font-bold mb-1">Rp 40.000<span class="text-base font-medium">/hari</span></div>
+        <ul class="text-sm text-gray-300 list-disc text-left pl-6 my-4 space-y-1">
+          <li>Daypack 20–30L</li>
+          <li>Jas hujan</li>
+          <li>Headlamp + baterai</li>
+          <li>Trekking pole</li>
+          <li>Botol air lipat / Water bladder</li>
+          <li>Emergency blanket + peluit</li>
+        </ul>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+      </div>
+
+      <!-- Paket Pemula -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 text-center border border-gray-700">
+        <h2 class="text-red-500 font-bold text-lg">Paket Pemula</h2>
+        <p class="text-sm text-gray-400 mb-3">Pertama kali naik + bermalam</p>
+        <div class="text-2xl font-bold mb-1">Rp100.000<span class="text-base font-medium">/hari</span></div>
+        <ul class="text-sm text-gray-300 list-disc text-left pl-6 my-4 space-y-1">
+          <li>Carrier 50L</li>
+          <li>Tenda 2 orang</li>
+          <li>Sleeping bag</li>
+          <li>Matras gulung</li>
+          <li>Kompor Portable + gas kecil</li>
+          <li>Headlamp + baterai</li>
+          <li>Trekking pole</li>
+          <li>Jas hujan</li>
+          <li>Emergency Blanket</li>
+        </ul>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+      </div>
+
+      <!-- Paket Standar -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 text-center border border-gray-700">
+        <h2 class="text-red-500 font-bold text-lg">Paket Standar</h2>
+        <p class="text-sm text-gray-400 mb-3">Berpengalaman + alat masak</p>
+        <div class="text-2xl font-bold mb-1">Rp 120.000<span class="text-base font-medium">/hari</span></div>
+        <ul class="text-sm text-gray-300 list-disc text-left pl-6 my-4 space-y-1">
+          <li>Tas Carrier 60L</li>
+          <li>Tenda 2 orang</li>
+          <li>Sleeping bag</li>
+          <li>Matras Aluminium</li>
+          <li>Kompor Portable + gas kecil</li>
+          <li>Headlamp + baterai</li>
+          <li>Trekking Pole</li>
+        </ul>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+      </div>
+
+      <!-- Paket Solo Explorer -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 text-center border border-gray-700">
+        <h2 class="text-red-500 font-bold text-lg">Paket Solo Explorer</h2>
+        <p class="text-sm text-gray-400 mb-3">Pendaki yang suka jalan sendiri</p>
+        <div class="text-2xl font-bold mb-1">Rp 60.000<span class="text-base font-medium">/hari</span></div>
+        <ul class="text-sm text-gray-300 list-disc text-left pl-6 my-4 space-y-1">
+          <li>Tenda 1 orang</li>
+          <li>Matras lipat</li>
+          <li>Sleeping bag</li>
+          <li>Kompor mini + gas</li>
+          <li>Nesting kecil</li>
+          <li>Headlamp</li>
+          <li>Trekking pole</li>
+          <li>Tas carrier 40L</li>
+        </ul>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+      </div>
+
+      <!-- Paket Adventure Pro -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 text-center border border-gray-700">
+        <h2 class="text-red-500 font-bold text-lg">Paket Adventure Pro</h2>
+        <p class="text-sm text-gray-400 mb-3">Perlengkapan lengkap</p>
+        <div class="text-2xl font-bold mb-1">Rp 350.000<span class="text-base font-medium">/3 hari</span></div>
+        <ul class="text-sm text-gray-300 list-disc text-left pl-6 my-4 space-y-1">
+          <li>Tenda dome 3-4 orang (anti air & tahan angin)</li>
+          <li>Matras sleeping pod</li>
+          <li>Sleeping bag -5°C</li>
+          <li>Carrier (tas gunung) 60L</li>
+          <li>Kompor portable + tabung gas</li>
+          <li>Peralatan masak (panci, wajan, spatula)</li>
+          <li>Headlamp + baterai cadangan</li>
+          <li>Trekking pole (1 pasang)</li>
+        </ul>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+      </div>
+
+      <!-- Paket Santai -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 text-center border border-gray-700">
+        <h2 class="text-red-500 font-bold text-lg">Paket Santai</h2>
+        <p class="text-sm text-gray-400 mb-3">Cocok di camping ground/pantai</p>
+        <div class="text-2xl font-bold mb-1">Rp 60.000<span class="text-base font-medium">/hari</span></div>
+        <ul class="text-sm text-gray-300 list-disc text-left pl-6 my-4 space-y-1">
+          <li>Tenda 4 orang</li>
+          <li>Meja lipat</li>
+          <li>2 kursi lipat</li>
+          <li>Sleeping bag 2–4 pcs</li>
+          <li>Tikar & Matras gulung</li>
+          <li>Lampu camping gantung</li>
+          <li>Kompor 2 tungku + gas</li>
+          <li>Nesting besar</li>
+        </ul>
+        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-12 px-6 md:px-20  border-t border-gray-800">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <p class="font-semibold leading-relaxed">
+          Temukan kebebasan di alam,<br>
+          kami bantu lengkapi<br>
+          perlengkapannya.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Navigasi</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>Beranda</li>
+          <li>Alat Camping</li>
+          <li>Paket Sewa</li>
+          <li>Promo</li>
+          <li>Tentang Kami</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Kontak</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Email</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">© All right reserved 2025</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>kembali ke atas</li>
+          <li>Keamanan Privasi</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

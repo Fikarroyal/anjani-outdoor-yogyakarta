@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    /* background-color: #000000;
+    color: #ffffff; */
+  }
+
+  /* Nilai & Dampak Section */
+  .nilai-dampak-section {
+    padding: 40px 64px;
+    /* Matches the image's overall padding */
+  }
+
+  .nilai-dampak-title {
+    font-size: 32px;
+    /* From image */
+    font-weight: 800;
+    /* Extra bold */
+    margin-bottom: 40px;
+    /* Space below title */
+    line-height: 1.2;
+  }
+
+  .content-grid-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Custom ratio for left and right columns */
+    gap: 24px;
+    /* Space between main columns */
+  }
+
+  .left-column-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    /* Two rows for left content */
+    gap: 24px;
+    /* Space between cards in left column */
+  }
+
+  .card {
+    background-color: #1a1a1a;
+    /* Dark gray background */
+    padding: 24px;
+    /* Inner padding for cards */
+    border-radius: 8px;
+    /* Rounded corners */
+  }
+
+  .card-title {
+    font-size: 18px;
+    /* Larger title font */
+    font-weight: 600;
+    /* Semi-bold */
+    margin-bottom: 12px;
+    /* Increased space below title */
+  }
+
+  .card-text {
+    font-size: 14px;
+    /* Standard text size */
+    line-height: 1.6;
+    /* More relaxed line height for readability */
+    color: #a0a0a0;
+    /* Lighter gray for body text */
+  }
+
+  /* Pencapaian Section */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns for achievements */
+    gap: 20px 24px;
+    /* Vertical and horizontal gap */
+    margin-top: 16px;
+    /* Space below "Pencapaian" title */
+  }
+
+  .achievement-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align text to left */
+  }
+
+  .achievement-number {
+    font-size: 36px;
+    /* Large number size */
+    font-weight: 700;
+    /* Bold */
+    color: #ef4444;
+    /* Red color */
+    line-height: 1;
+    /* Tighter line height for number */
+    margin-bottom: 4px;
+    /* Small space between number and text */
+  }
+
+  .achievement-text {
+    font-size: 14px;
+    /* Smaller text below number */
+    color: #a0a0a0;
+    /* Lighter gray */
+    font-weight: 500;
+    /* Medium font-weight for text */
+  }
+
+  /* Visi & Misi and Nilai-Nilai Kami lists */
+  .vision-mission-list,
+  .our-values-list {
+    list-style: none;
+    /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+  }
+
+  .vision-mission-list li,
+  .our-values-list li {
+    font-size: 14px;
+    /* Standard text size */
+    line-height: 1.5;
+    margin-bottom: 8px;
+    /* Space between list items */
+    color: #a0a0a0;
+  }
+
+  .vision-mission-list li:last-child,
+  .our-values-list li:last-child {
+    margin-bottom: 0;
+    /* No margin on last item */
+  }
+
+  .vision-mission-list strong,
+  .our-values-list strong {
+    font-weight: 700;
+    /* Bold for headings within list items */
+    color: #ffffff;
+    /* White color for bold text */
+  }
+
+  .vision-mission-list ul {
+    /* For nested Misi list */
+    margin-top: 4px;
+    margin-left: 20px;
+    /* Indent for sub-list */
+    list-style: disc;
+    /* Back to disc for sub-list */
+  }
+
+  .vision-mission-list ul li {
+    margin-bottom: 4px;
+    /* Tighter spacing for sub-list items */
+  }
+
+  .our-values-list li {
+    display: flex;
+    /* Use flex for icon alignment */
+    align-items: flex-start;
+    /* Align text with top of icon */
+    gap: 8px;
+    /* Space between icon and text */
+    color: #a0a0a0;
+  }
+
+  .our-values-icon {
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    width: 16px;
+    /* Icon size */
+    height: 16px;
+    /* Icon size */
+    color: #ef4444;
+    /* Red color for checkmark */
+    margin-top: 2px;
+    /* Fine-tune vertical alignment */
+  }
+
+  .right-column-card-spacing {
+    margin-bottom: 24px;
+    /* Space between Visi & Misi and Nilai-nilai Kami cards */
+  }
+</style>
+
+</head>
+
+<!-- <body class="bg-black text-white"> -->
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header
+    class="flex justify-between items-center px-6 py-4 border-zinc-800 top-0 z-10 fixed w-full bg-black backdrop-blur bg-opacity-70 shadow">
+    <!-- Logo & Menu -->
+    <div class="flex items-center space-x-10">
+      <img src="assets/Icons/Logo.png" alt="Logo" class="h-10 w-10" />
+      <nav class="hidden md:flex space-x-7 text-sm font-normal">
+        <a href="beranda.html" class="hover:text-red-500">Beranda</a>
+        <a href="alat_camping.html" class="hover:text-red-500">Alat Camping</a>
+        <a href="paket_sewa.html" class="hover:text-red-500">Paket Sewa</a>
+        <a href="promo.html" class="hover:text-red-500">Promo</a>
+        <a href="tentang_kami.html" class="text-red-500 font-semibold">Tentang Kami</a>
+      </nav>
+    </div>
+
+    <!-- Search & Icons -->
+    <div class="flex items-center space-x-1 ">
+      <!-- Search Bar -->
+      <div class="flex items-center bg-zinc-900 px-4 py-2 rounded-full space-x-2 text-sm">
+        <img src="assets/Icons/search.png">
+        <input type="text" placeholder="Cari Barang"
+          class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-32" />
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class=" rounded-full bg-zinc-900">
+        <button onclick="window.location.href='keranjang.html'" class="p-2 pr-1 px-3  rounded-full bg-zinc-900">
+          <img src="assets/Icons/shopping_cart.png" alt="Cart" class="h-5 w-5" />
+        </button>
+        <button onclick="window.location.href='halaman_favorit.html'" class="p-2 pr-3 rounded-full bg-zinc-900">
+          <img src="assets/Icons/favorite_border-2.png" alt="Wishlist" class="h-5 w-5" />
+        </button>
+      </div>
+      <button onclick="window.location.href='masuk.html'"
+        class="p-2 rounded-full bg-zinc-900 flex items-center space-x-2">
+        <img src="assets/Icons/account_circle.png" alt="User" class="h-5 w-5" />
+        <span class="text-sm">Profil</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-8 px-4 pt-24">
+    <h1 class="text-3xl font-extrabold">Mengenal Lebih Dalam Tentang<br>Anjani Outdoor Yogyakarta</h1>
+    <div class="mt-8">
+      <img src="assets/Frame 107.png" alt="Hero" class="rounded-xl mx-auto max-w-5xl">
+    </div>
+    <div class="flex justify-center mt-6 space-x-6 flex-wrap">
+      <img src="assets/brand 1.png" class="h-12">
+      <img src="assets/brand 2.png" class="h-12">
+      <img src="assets/brand 3.png" class="h-12">
+      <img src="assets/brand 4.png" class="h-12">
+      <img src="assets/brand 5.png" class="h-12">
+      <img src="assets/brand 6.png" class="h-12">
+      <img src="assets/brand 7.png" class="h-12">
+      <img src="assets/brand 8.png" class="h-12">
+    </div>
+  </section>
+
+
+  <section class="nilai-dampak-section">
+    <h2 class="nilai-dampak-title">
+      Nilai & Dampak Anjani Outdoor Yogyakarta
+    </h2>
+    <div class="content-grid-main">
+      <div class="left-column-grid">
+        <div class="card">
+          <h3 class="card-title">Anjani Outdoor Yogyakarta</h3>
+          <p class="card-text">
+            Adalah toko perlengkapan outdoor yang berlokasi di Sleman, Daerah
+            Istimewa Yogyakarta. Cabang dari toko Anjani Outdoor di Bandung.
+            Menyediakan berbagai perlengkapan mendaki dan jaket outdoor
+            terkini. Mulai dari carrier, tenda, hingga sepatu mendaki, semua
+            kami kurasi agar kamu bisa fokus pada petualangan, bukan
+            perlengkapannya.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Pencapaian Anjani Outdoor Yogyakarta</h3>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <span class="achievement-number">1500+</span>
+              <span class="achievement-text">Transaksi</span>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-number">1000+</span>
+              <span class="achievement-text">Pelanggan</span>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-number">900+</span>
+              <span class="achievement-text">Thrift Terjual</span>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-number">76K+</span>
+              <span class="achievement-text">Follower Instagram</span>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-number">5+</span>
+              <span class="achievement-text">Brand Outdoor</span>
+            </div>
+            <div class="achievement-item">
+              <span class="achievement-number">2</span>
+              <span class="achievement-text">Cabang</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card right-column-card-spacing">
+          <h3 class="card-title">Visi & Misi</h3>
+          <ul class="vision-mission-list">
+            <li>
+              <strong>Visi:</strong> Menjadi platform perlengkapan outdoor
+              terpercaya dan inklusif bagi semua kalangan, dari pendaki
+              pemula hingga profesional.
+            </li>
+            <li>
+              <strong>Misi:</strong>
+              <ul class="list-disc list-inside">
+                <li>Menyediakan perlengkapan berkualitas (baru & thrift)</li>
+                <li>
+                  Memudahkan akses sewa alat dengan harga terjangkau
+                </li>
+                <li>
+                  Mendorong budaya eksplorasi alam yang aman dan bertanggung
+                  jawab
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Nilai-Nilai Kami (Our Values)</h3>
+          <ul class="our-values-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="our-values-icon" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>
+                <strong>Kualitas & Keamanan</strong>: Semua perlengkapan
+                kami dicek dan dirawat rutin sebelum disewakan atau dijual.
+              </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="our-values-icon" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>
+                <strong>Ramah Lingkungan</strong>: Thrift bukan hanya hemat,
+                tapi juga mengurangi limbah industri.
+              </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="our-values-icon" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>
+                <strong>Aksesibel & Terjangkau</strong>: Kami percaya bahwa
+                mendaki tidak harus mahal.
+              </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="our-values-icon" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>
+                <strong>Inklusivitas</strong>: Baik pemula maupun profesional,
+                semua kami layani dengan semangat yang sama.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Base styles for consistency */
+
+    /* Lokasi Toko Section */
+    .lokasi-toko-section {
+      padding: 64px;
+      /* Consistent padding of 64px (approx. px-16 py-16) */
+    }
+
+    .lokasi-toko-title {
+      font-size: 24px;
+      /* Exact size from inspection */
+      font-weight: 700;
+      /* Bold */
+      margin-bottom: 24px;
+      /* Space below title */
+    }
+
+    .lokasi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Default for mobile */
+      gap: 24px;
+      /* Gap between map and locations */
+    }
+
+    @media (min-width: 768px) {
+      .lokasi-grid {
+        grid-template-columns: 442px 1fr;
+        /* Custom fixed width for map, then fill remaining */
+        gap: 24px;
+        /* Gap between map and locations */
+      }
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 256px;
+      /* Fixed height for map */
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #262626;
+      /* Fallback background */
+    }
+
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Ensures image covers the area */
+    }
+
+    .location-details-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      /* Space between location cards */
+    }
+
+    .location-card {
+      background-color: #1a1a1a;
+      padding: 16px;
+      /* Padding inside card */
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* Vertically center content if card height varies */
+    }
+
+    .location-card-title {
+      font-size: 14px;
+      /* Exact size from inspection */
+      font-weight: 600;
+      /* Semi-bold */
+      margin-bottom: 4px;
+      /* Tight space between title and address */
+      display: flex;
+      /* For icon alignment */
+      align-items: center;
+    }
+
+    .location-card-title svg {
+      margin-right: 8px;
+      /* Space between icon and title text */
+      width: 16px;
+      /* Icon size */
+      height: 16px;
+      /* Icon size */
+      color: #ffffff;
+      /* White icon color */
+    }
+
+    .location-card-address {
+      font-size: 13px;
+      /* Exact size from inspection */
+      color: #a0a0a0;
+      /* Zinc-400 */
+      line-height: 1.4;
+      /* Adjusted line height for address */
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 64px;
+      /* Consistent padding of 64px (approx. px-16 py-16) */
+      padding-top: 56px;
+      /* Adjusted top padding to match image gap */
+    }
+
+    .faq-title {
+      font-size: 24px;
+      /* Exact size from inspection */
+      font-weight: 700;
+      /* Bold */
+      margin-bottom: 24px;
+      /* Space below title */
+    }
+
+    .faq-container {
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      /* Ensures rounded corners apply to content */
+      border: 1px solid #1a1a1a;
+      /* Subtle border to define container */
+    }
+
+    .faq-item {
+      padding: 18px 20px;
+      /* Adjusted padding for better visual match */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #262626;
+      /* Divider color (zinc-800 equivalent) */
+      font-size: 14px;
+      /* Exact size from inspection */
+      color: #ffffff;
+      /* Text color */
+      cursor: pointer;
+      font-weight: 400;
+      /* Regular font weight for questions */
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      /* No border on the last item */
+    }
+
+    .faq-item-icon {
+      width: 20px;
+      /* Icon size */
+      height: 20px;
+      /* Icon size */
+      color: #a0a0a0;
+      /* Icon color (zinc-400) */
+    }
+
+    /* Specific styling for "BANTUAN & KONTAK" */
+    .faq-item.help-contact {
+      font-weight: 600;
+      /* Semi-bold */
+      text-transform: uppercase;
+      /* Uppercase text */
+      color: #ffffff;
+      /* White color */
+    }
+  </style>
+
+  <section class="lokasi-toko-section">
+    <h2 class="lokasi-toko-title">Lokasi Toko Kami</h2>
+    <div class="lokasi-grid">
+      <div class="map-placeholder">
+        <img src="https://g.co/kgs/XM5CZN6" alt="Peta Lokasi Anjani Outdoor" />
+      </div>
+      <div class="location-details-container">
+        <div class="location-card">
+          <p class="location-card-title">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+            Toko Cabang di Yogyakarta
+          </p>
+          <p class="location-card-address">
+            Anjani Yogyakarta: Jl. Kapten Haryadi No.48, Dayakan, Sardonoharjo,
+            Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581
+          </p>
+        </div>
+        <div class="location-card">
+          <p class="location-card-title">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+            Toko Pusat di Bandung
+          </p>
+          <p class="location-card-address">
+            Perumahan Graha Sariwangi, blok A2, Sariwangi, Kec. Parongpong, Kota
+            Bandung, Jawa Barat 40559
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <span>Aplikasi ini untuk apa saja?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="faq-item-icon" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      <div class="faq-item">
+        <span>Bagaimana sistem sewa di aplikasi ini?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="faq-item-icon" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      <div class="faq-item">
+        <span>Apa yang terjadi jika alat rusak atau hilang?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="faq-item-icon" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      <div class="faq-item">
+        <span>Apakah semua produk baru dan original?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="faq-item-icon" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      <div class="faq-item help-contact">
+        <span>BANTUAN & KONTAK</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="faq-item-icon" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-12 px-6 md:px-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <p class="font-semibold leading-relaxed">
+          Temukan kebebasan di alam,<br>
+          kami bantu lengkapi<br>
+          perlengkapannya.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Navigasi</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>Beranda</li>
+          <li>Alat Camping</li>
+          <li>Paket Sewa</li>
+          <li>Promo</li>
+          <li>Tentang Kami</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">Kontak</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Email</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3">© All right reserved 2025</h4>
+        <ul class="space-y-1 text-sm text-white">
+          <li>kembali ke atas</li>
+          <li>Keamanan Privasi</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

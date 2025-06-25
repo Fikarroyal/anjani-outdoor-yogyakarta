@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promo Akun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      body {
+            font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Navbar -->
+    <header
+    class="flex justify-between items-center px-6 py-4 border-zinc-800 top-0 z-10 fixed w-full bg-black backdrop-blur bg-opacity-70 shadow">
+    <!-- Logo & Menu -->
+    <div class="flex items-center space-x-10">
+      <img src="assets/Icons/Logo.png" alt="Logo" class="h-10 w-10" />
+      <nav class="hidden md:flex space-x-7 text-sm font-normal">
+        <a href="beranda_masuk.html" class="hover:text-red-500">Beranda</a>
+        <a href="alat_camping.html" class="hover:text-red-500">Alat Camping</a>
+        <a href="paket_sewa.html" class="hover:text-red-500">Paket Sewa</a>
+        <a href="promo.html" class="hover:text-red-500">Promo</a>
+        <a href="tentang_kami.html" class="hover:text-red-500">Tentang Kami</a>
+      </nav>
+    </div>
+
+    <!-- Search & Icons -->
+    <div class="flex items-center space-x-1 ">
+      <!-- Search Bar -->
+      <div class="flex items-center bg-zinc-900 px-4 py-2 rounded-full space-x-2 text-sm">
+        <img src="assets/Icons/search.png">
+        <input type="text" placeholder="Cari Barang"
+          class="bg-transparent focus:outline-none text-white placeholder-white text-sm w-32" />
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class=" rounded-full bg-zinc-900">
+        <button onclick="window.location.href='/keranjang.html'" class="p-2 pr-1 px-3  rounded-full bg-zinc-900">
+          <img src="assets/Icons/shopping_cart.png" alt="Cart" class="h-5 w-5" />
+        </button>
+        <button onclick="window.location.href='/halaman_favorit.html'" class="p-2 pr-3 rounded-full bg-zinc-900">
+          <img src="assets/Icons/favorite_border-2.png" alt="Wishlist" class="h-5 w-5" />
+        </button>
+      </div>
+      <button onclick="window.location.href='kelola_akun.html'"
+        class="p-2 rounded-full bg-zinc-900 flex items-center space-x-2">
+        <img src="assets/Icons/account_circle.png" alt="User" class="h-5 w-5" />
+        <span class="text-sm">Jason</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Profil Header -->
+  <div class="px-10 py-6 pt-24">
+    <div class="flex items-center space-x-4">
+      <div class="text-2xl font-semibold">Jasonhamid</div>
+      <a href="#" class="text-sm text-gray-400 hover:text-white">Ubah Profil</a>
+    </div>
+
+    <!-- Level & Poin -->
+    <div class="mt-4 flex items-center space-x-6">
+      <div class="bg-[#1f1f1f] px-4 py-2 rounded-md text-sm">
+        <div class="text-gray-300">Level kamu sekarang</div>
+        <div class="font-semibold text-orange-400">🥉 Bronze</div>
+      </div>
+      <div class="text-sm">
+        <div class="text-gray-300">Kumpulkan poin dengan lebih banyak transaksi!</div>
+        <div class="mt-1 w-64 bg-gray-600 h-2 rounded-full overflow-hidden">
+          <div class="bg-red-500 h-full w-[80%]"></div>
+        </div>
+        <div class="mt-1 font-semibold text-white">80 Poin</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="px-10 border-b border-gray-700 text-sm flex space-x-6">
+    <a href="transaksi_akun.html" class="py-2 border-b-2 border-transparent">Transaksi Saya</a>
+    <a href="kelola_akun.html" class="py-2 border-b-2 border-transparent">Akun Saya</a>
+    <a href="alamat_akun.html" class="py-2 border-b-2 border-transparent">Alamat</a>
+    <a href="promo_akun.html" class="py-2 border-b-2 text-red-500 border-red-500 font-semibold">Kode Promo saya</a>
+  </div>
+
+  <!-- Promo Saya -->
+  <div class="px-10 py-6 space-y-6">
+    <h2 class="text-xl font-semibold mb-4">Promo Saya</h2>
+
+    <!-- Promo 1 -->
+    <div class="relative rounded-xl overflow-hidden h-40">
+      <img src="assets/Frame 101.png" class="object-cover w-full h-full brightness-10" alt="Promo 1">
+      <div class="absolute inset-0 px-6 py-4 flex flex-col justify-between">
+        <div>
+          <h3 class="text-white text-lg font-semibold">Sewa Rutin, <span class="text-red-500">Dapat Cashback</span></h3>
+          <p class="text-3xl font-bold text-white">Rp50.000!</p>
+        </div>
+        <button class="bg-white text-black text-sm px-4 py-2 rounded-full w-fit">💲 Pakai Promo</button>
+      </div>
+    </div>
+
+    <!-- Promo 2 -->
+    <div class="relative rounded-xl overflow-hidden h-40">
+      <img src="assets/Frame 102.png" class="object-cover w-full h-full brightness-10" alt="Promo 2">
+      <div class="absolute inset-0 px-6 py-4 flex flex-col justify-between">
+        <div>
+          <h3 class="text-white text-lg font-semibold">Belanja Rp300.000, <span class="text-red-500">Bonus</span></h3>
+          <p class="text-3xl font-bold text-white">Rp30.000!</p>
+        </div>
+        <button class="bg-white text-black text-sm px-4 py-2 rounded-full w-fit">💲 Pakai Promo</button>
+      </div>
+    </div>
+
+    <!-- Promo 3 -->
+    <div class="relative rounded-xl overflow-hidden h-40">
+      <img src="assets/Frame 103.png" class="object-cover w-full h-full brightness-10" alt="Promo 3">
+      <div class="absolute inset-0 px-6 py-4 flex flex-col justify-between">
+        <div>
+          <h3 class="text-white text-lg font-semibold">Diskon Sewa <span class="text-red-500">Weekdays</span></h3>
+          <p class="text-3xl font-bold text-white">20%!</p>
+        </div>
+        <button class="bg-white text-black text-sm px-4 py-2 rounded-full w-fit">💲 Pakai Promo</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

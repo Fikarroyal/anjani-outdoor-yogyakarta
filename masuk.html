@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masuk</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="font-sans bg-gray-100">
+  <div class="flex min-h-screen">
+    <!-- KIRI -->
+    <div class="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
+      <img src="assets/Icons/jembood.png" alt="Logo Anjani" class="w-28 h-28 mb-6" />
+      <h2 class="text-red-500 text-lg font-semibold">Selamat Datang,</h2>
+      <h1 class="text-4xl font-extrabold mb-4">Petualang!</h1>
+      <p class="text-center text-gray-300 text-base max-w-md leading-relaxed">
+        Masuk ke akunmu dan temukan perlengkapan terbaik<br />untuk menjelajah alam.
+      </p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="w-1/2 bg-white flex flex-col justify-center px-16 py-10">
+      <div class="w-full max-w-md">
+        <h2 class="text-3xl font-extrabold text-black mb-1">Masuk</h2>
+        <p class="text-sm text-gray-700 mb-6">
+          Tidak punya akun?
+          <a href="daftar.html" class="text-blue-600 hover:underline">buat akun baru</a>
+        </p>
+
+        <!-- <form class="space-y-4"> -->
+        <!-- Username/email -->
+        <div class="space-y-4">
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+              <i class="fa fa-user"></i>
+            </span>
+            <input type="text" placeholder="username atau email"
+              class="pl-10 w-full py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black text-sm" />
+          </div>
+
+          <!-- Password -->
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+              <i class="fa fa-lock"></i>
+            </span>
+            <input type="password" placeholder="Password"
+              class="pl-10 pr-10 w-full py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black text-sm" />
+            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer">
+              <i class="fa fa-eye"></i>
+            </span>
+          </div>
+
+          <!-- Checkbox + Lupa -->
+          <div class="flex justify-between items-center text-sm">
+            <label class="flex items-center">
+              <input type="checkbox" class="mr-2 accent-black" />
+              Simpan password
+            </label>
+            <a href="#" class="text-black hover:underline">Lupa Password?</a>
+          </div>
+
+          <!-- Tombol -->
+          <button onclick="window.location.href='beranda_masuk.html'"
+            class="bg-black text-white w-full py-3 my-3  rounded-full font-semibold hover:bg-gray-900 transition">
+            Masuk
+          </button>
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
