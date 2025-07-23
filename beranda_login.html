@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -212,7 +213,7 @@
             <li>• Emergency blanket + peluit</li>
           </ul>
         </div>
-        <button class="bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
+        <button class="btn-sewa bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
       </div>
       
       <!-- Paket Pemula -->
@@ -233,7 +234,7 @@
             <li>• Emergency Blanket</li>
           </ul>
         </div>
-        <button class="bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
+        <button class="btn-sewa bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
       </div>
 
       <!-- Paket Standar -->
@@ -252,7 +253,7 @@
             <li>• Trekking Pole</li>
           </ul>
         </div>
-        <button class="bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
+        <button class="btn-sewa bg-white text-black rounded-full py-2 font-semibold">Sewa Sekarang</button>
       </div>
     </div>
   </div>
@@ -576,7 +577,25 @@
 
   </div>
 </footer>
-
+<script>
+     document.querySelectorAll('.btn-sewa').forEach(function(button) {
+    button.addEventListener('click', function () {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Ditambahkan ke Keranjang!',
+        showConfirmButton: false,
+        timer: 1500,
+        background: '#1e1e1e',
+        color: '#ffffff',
+        iconColor: '#ffffff',
+        customClass: {
+          popup: 'swal2-custom-popup',
+        }
+      });
+    });
+  });
+  </script>
 </body>
 
 </html>

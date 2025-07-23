@@ -7,9 +7,10 @@
   <title>Paket Sewa</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -19,7 +20,7 @@
 
 <body class="bg-black text-white">
   <!-- Navbar -->
-    <header
+  <header
     class="flex justify-between items-center px-6 py-4 border-zinc-800 top-0 z-10 fixed w-full bg-black backdrop-blur bg-opacity-70 shadow">
     <!-- Logo & Menu -->
     <div class="flex items-center space-x-10">
@@ -83,7 +84,9 @@
           <li>Botol air lipat / Water bladder</li>
           <li>Emergency blanket + peluit</li>
         </ul>
-        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+        <button 
+        class="btn-sewa bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa
+          Sekarang</button>
       </div>
 
       <!-- Paket Pemula -->
@@ -102,7 +105,8 @@
           <li>Jas hujan</li>
           <li>Emergency Blanket</li>
         </ul>
-        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+        <button  
+        class="btn-sewa bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
       </div>
 
       <!-- Paket Standar -->
@@ -119,7 +123,8 @@
           <li>Headlamp + baterai</li>
           <li>Trekking Pole</li>
         </ul>
-        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+        <button  
+        class="btn-sewa bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
       </div>
 
       <!-- Paket Solo Explorer -->
@@ -137,7 +142,8 @@
           <li>Trekking pole</li>
           <li>Tas carrier 40L</li>
         </ul>
-        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+        <button  
+        class="btn-sewa bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
       </div>
 
       <!-- Paket Adventure Pro -->
@@ -155,7 +161,8 @@
           <li>Headlamp + baterai cadangan</li>
           <li>Trekking pole (1 pasang)</li>
         </ul>
-        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+        <button  
+        class="btn-sewa bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
       </div>
 
       <!-- Paket Santai -->
@@ -173,7 +180,8 @@
           <li>Kompor 2 tungku + gas</li>
           <li>Nesting besar</li>
         </ul>
-        <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
+        <button  
+        class="btn-sewa bg-white text-black px-6 py-2 rounded-full text-sm font-semibold">Sewa Sekarang</button>
       </div>
 
     </div>
@@ -216,6 +224,28 @@
       </div>
     </div>
   </footer>
+
+
+<script>
+  document.querySelectorAll('.btn-sewa').forEach(function(button) {
+    button.addEventListener('click', function () {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Ditambahkan ke Keranjang!',
+        showConfirmButton: false,
+        timer: 1500,
+        background: '#1e1e1e',
+        color: '#ffffff',
+        iconColor: '#ffffff',
+        customClass: {
+          popup: 'swal2-custom-popup',
+        }
+      });
+    });
+  });
+</script>
+
 
 </body>
 
