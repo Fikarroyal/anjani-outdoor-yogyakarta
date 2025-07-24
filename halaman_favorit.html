@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -490,6 +491,30 @@
       margin-bottom: 0.25rem;
       /* Mimic space-y-1 */
     }
+
+    /* untuk alert */
+  .swal2-custom-popup {
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  }
+
+  .swal2-hapus-button {
+    background-color: #ef4444 !important;
+    color: white !important;
+    border-radius: 9999px !important;
+    padding: 8px 24px !important;
+    font-weight: 600 !important;
+  }
+
+  .swal2-batal-button {
+    background-color: #f3f4f6 !important;
+    color: black !important;
+    border-radius: 9999px !important;
+    padding: 8px 24px !important;
+    font-weight: 600 !important;
+  }
+
   </style>
 </head>
 
@@ -563,10 +588,10 @@
           <div class="product-price-section">
             <strong class="current-price">Rp 20.000</strong>
             <div class="product-actions">
-              <button class="action-button delete">
+              <button class="btn-hapus action-button delete">
                 <img src="assets/Icons/delete.png" alt="">
               </button>
-              <button class="action-button add-to-cart">
+              <button class="btn-keranjang action-button add-to-cart">
                 <img src="assets/Icons/sopping_black.png" alt="">
               </button>
             </div>
@@ -596,10 +621,10 @@
           <div class="product-price-section">
             <strong class="current-price">Rp 20.000</strong>
             <div class="product-actions">
-              <button class="action-button delete">
+              <button class="btn-hapus action-button delete">
                 <img src="assets/Icons/delete.png" alt="">
               </button>
-              <button class="action-button add-to-cart">
+              <button class="btn-keranjang action-button add-to-cart">
                 <img src="assets/Icons/sopping_black.png" alt="">
               </button>
             </div>
@@ -611,56 +636,56 @@
     <!-- untuk halaman rekomendasi -->
     <section class="bg-black py-16 px-4">
       <div class="max-w-6xl mx-auto">
-          <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center justify-between mb-4">
 
-            <div>
-              <h2 class="text-white text-2xl font-bold">Mungkin Anda Suka</h2>
-            </div>
-            <button onclick="window.location.href='alat_camping.html'"
-              class="bg-white text-black rounded-full justify-end px-5 py-2 font-semibold">Lebih Banyak</button>
+          <div>
+            <h2 class="text-white text-2xl font-bold">Mungkin Anda Suka</h2>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Tenda -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
-              <img src="assets/tenda.png" alt="Tenda" class="w-full h-40 object-contain mx-auto mb-4">
-              <button onclick="window.location.href='halaman_favorit.html'"
-                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
-                  src="assets/Icons/favorite_border-1.png" alt=""></button>
-              <p class="text-white font-semibold">Tenda Dome</p>
-              <p class="text-sm text-gray-400">Tenda kapasitas 4 orang, tahan hujan dan angin.</p>
-              <p class="text-sm text-white mt-1">Rp 35.000/hari</p>
-            </div>
-            <!-- Carrier -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
-              <img src="assets/carrier 1.png" alt="Carrier" class="w-full h-40 object-contain mx-auto mb-4">
-              <button onclick="window.location.href='halaman_favorit.html'"
-                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
-                  src="assets/Icons/favorite_border-1.png" alt=""></button>
-              <p class="text-white font-semibold">Carrier 60L</p>
-              <p class="text-sm text-gray-400">Ransel gunung kapasitas besar untuk perjalanan panjang.</p>
-              <p class="text-sm text-white mt-1">Rp 25.000/hari</p>
-            </div>
-            <!-- Jaket Merah -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
-              <img src="assets/jaket 1.png" alt="Jaket Merah" class="w-full h-40 object-contain mx-auto mb-4">
-              <button onclick="window.location.href='halaman_favorit.html'"
-                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
-                  src="assets/Icons/favorite_border-1.png" alt=""></button>
-              <p class="text-white font-semibold">Jaket Parasut Merah</p>
-              <p class="text-sm text-gray-400">Jaket windproof dan waterproof, cocok untuk suhu dingin.</p>
-              <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
-            </div>
-            <!-- Jaket Hitam -->
-            <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
-              <img src="assets/jaket 2.png" alt="Jaket Hitam" class="w-full h-40 object-contain mx-auto mb-4">
-              <button onclick="window.location.href='halaman_favorit.html'"
-                class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img
-                  src="assets/Icons/favorite_border-1.png" alt=""></button>
-              <p class="text-white font-semibold">Jaket Gunung Hitam</p>
-              <p class="text-sm text-gray-400">Jaket tahan air dan angin dengan lapisan hangat di dalam.</p>
-              <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
-            </div>
+          <button onclick="window.location.href='alat_camping.html'"
+            class="bg-white text-black rounded-full justify-end px-5 py-2 font-semibold">Lebih Banyak</button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Tenda -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/tenda.png" alt="Tenda" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img src="assets/Icons/favorite_border-1.png"
+                alt=""></button>
+            <p class="text-white font-semibold">Tenda Dome</p>
+            <p class="text-sm text-gray-400">Tenda kapasitas 4 orang, tahan hujan dan angin.</p>
+            <p class="text-sm text-white mt-1">Rp 35.000/hari</p>
           </div>
+          <!-- Carrier -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/carrier 1.png" alt="Carrier" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img src="assets/Icons/favorite_border-1.png"
+                alt=""></button>
+            <p class="text-white font-semibold">Carrier 60L</p>
+            <p class="text-sm text-gray-400">Ransel gunung kapasitas besar untuk perjalanan panjang.</p>
+            <p class="text-sm text-white mt-1">Rp 25.000/hari</p>
+          </div>
+          <!-- Jaket Merah -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/jaket 1.png" alt="Jaket Merah" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img src="assets/Icons/favorite_border-1.png"
+                alt=""></button>
+            <p class="text-white font-semibold">Jaket Parasut Merah</p>
+            <p class="text-sm text-gray-400">Jaket windproof dan waterproof, cocok untuk suhu dingin.</p>
+            <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
+          </div>
+          <!-- Jaket Hitam -->
+          <div class="bg-zinc-900 rounded-xl overflow-hidden relative p-4">
+            <img src="assets/jaket 2.png" alt="Jaket Hitam" class="w-full h-40 object-contain mx-auto mb-4">
+            <button onclick="window.location.href='halaman_favorit.html'"
+              class="absolute bottom-3 right-3 bg-white rounded-full p-2"> <img src="assets/Icons/favorite_border-1.png"
+                alt=""></button>
+            <p class="text-white font-semibold">Jaket Gunung Hitam</p>
+            <p class="text-sm text-gray-400">Jaket tahan air dan angin dengan lapisan hangat di dalam.</p>
+            <p class="text-sm text-white mt-1">Rp 20.000/hari</p>
+          </div>
+        </div>
       </div>
     </section>
     <footer class="footer-section bg-black text-white">
@@ -702,6 +727,62 @@
         </div>
       </div>
     </footer>
+
+
+    <script>
+      document.querySelectorAll('.btn-keranjang').forEach(function (button) {
+        button.addEventListener('click', function () {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Ditambahkan ke Keranjang!',
+            showConfirmButton: false,
+            timer: 1500,
+            background: '#1e1e1e',
+            color: '#ffffff',
+            iconColor: '#ffffff',
+            customClass: {
+              popup: 'swal2-custom-popup',
+            }
+          });
+        });
+      });
+
+    function confirmHapusFavorit(callback) {
+    Swal.fire({
+      title: 'Hapus Item dari Favorit?',
+      icon: 'warning',  
+      background: '#1e1e1e',
+      color: '#ffffff',
+      iconHtml: '<img src="assets/icons/warning_amber.png">',
+      showCancelButton: true,
+      confirmButtonText: '<i class="fa fa-trash"></i> Hapus',
+      cancelButtonText: '<i class="fa fa-times-circle"></i> Batal',
+      confirmButtonColor: '#F2F2F2',
+      cancelButtonColor: '#FF3B30',
+      customClass: {
+        popup: 'swal2-custom-popup',
+        confirmButton: 'swal2-hapus-button',
+        cancelButton: 'swal2-batal-button',
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        callback(); // jalankan aksi hapus
+      }
+    });
+  }
+
+  // Event listener untuk semua tombol
+  document.querySelectorAll('.btn-hapus').forEach(function(button) {
+    button.addEventListener('click', function () {
+      confirmHapusFavorit(() => {
+        // Aksi penghapusan di sini
+        console.log('Item dihapus');
+        // Bisa juga: this.closest('.card').remove(); jika kamu ingin menghapus elemen HTML
+      });
+    });
+  });
+    </script>
 </body>
 
 </html>
