@@ -1,1 +1,1 @@
-# Anjani Outdoor Yogyakarta WebApp
+# Anjani Outdoor Yogyakarta
